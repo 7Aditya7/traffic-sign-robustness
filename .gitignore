@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments and local configuration
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Tool and model caches
+.cache/
+.huggingface/
+hf_cache/
+models/
+data/
+
+# Generated pair outputs
+ai_aided/figures/*
+!ai_aided/figures/.gitkeep
+human_only/figures/*
+!human_only/figures/.gitkeep
+
+# Jupyter and editor files
+.ipynb_checkpoints/
+.vscode/
+*.log
