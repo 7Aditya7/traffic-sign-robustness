@@ -60,7 +60,7 @@ This log tracks my AI interactions and reflections during the Vision Transformer
 
 ### Understanding the Model and Preprocessing
 
-- **Who:** RUdra
+- **Who:** Rudra
 - **Goal:** Understand what `ViTImageProcessor` does and why the model expects RGB images at 224 × 224.
 - **Prompt (important ones):**
   ```
