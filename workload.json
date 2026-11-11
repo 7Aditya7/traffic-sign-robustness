@@ -1,0 +1,26 @@
+
+{
+  "team_name": "Everest Intelligence",
+  "students": [
+    {
+      "first_name": "Aaditya",
+      "last_name": "Jha",
+      "workload": 0.25
+    },
+    {
+      "first_name": "Rudra Prasad",
+      "last_name": "Dhungana",
+      "workload": 0.25
+    },
+    {
+      "first_name": "Sandesh",
+      "last_name": "Ghimire",
+      "workload": 0.25
+    },
+    {
+      "first_name": "Aditya",
+      "last_name": "Khadka",
+      "workload": 0.25
+    }
+  ]
+}

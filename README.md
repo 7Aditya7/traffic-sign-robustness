@@ -1,89 +1,38 @@
-# Traffic Sign Recognition Under Image Distortions
+# Everest Intelligence — Traffic Sign Classification Analysis
 
-Minimal research repository for the JKU AI & Visualization course. The project studies
-traffic-sign image classification and black-box model behavior using the
-[ViT traffic-sign model](https://huggingface.co/kelvinandreas/vit-traffic-sign-GTSRB)
-and the [GTSRB dataset](https://huggingface.co/datasets/tanganke/gtsrb).
+## Project overview
 
-The repository currently contains shared infrastructure and pair workspaces. It
-does not contain research findings or completed experiments.
+This project explores how a pretrained Vision Transformer classifies traffic signs and how its predictions change when images are modified. We use the **German Traffic Sign Recognition Benchmark (GTSRB)** dataset, which has **43 traffic-sign classes**, and the pretrained model [`kelvinandreas/vit-traffic-sign-GTSRB`](https://huggingface.co/kelvinandreas/vit-traffic-sign-GTSRB).
 
-## Repository map
+Our focus is on **model errors, prediction confidence, and robustness to image changes**. We use notebooks, plots, and an interactive dashboard to identify patterns that may be missed when looking only at overall accuracy. Our analysis describes observed model behavior; it does not establish the model's internal reasons for making a prediction.
 
-- `shared/`: neutral model, dataset, configuration, and label-verification helpers.
-- `ai_aided/`: work owned by the AI-assisted pair.
-- `human_only/`: work owned by the human-only pair.
-- `docs/evaluation_protocol.md`: shared technical protocol and kickoff decisions.
+## Main analyses
 
-The two pairs must keep their research code, notebooks, figures, and results in
-their own directories. Only agreed technical infrastructure and evaluation
-requirements belong in `shared/`.
+### P1 — Misclassification patterns
 
-## Setup
+Explores which traffic-sign classes the model confuses, how these errors change under image corruptions such as Gaussian noise and motion blur, and which individual predictions improve or worsen.
 
-Python 3.11 or newer is required. The commands below work on Windows PowerShell,
-macOS, and Linux with the activation command adjusted as shown.
+### P2 — Prediction confidence
 
-```text
-python --version
-python -m venv .venv
-```
+Investigates confidence distributions and how the model's prediction confidence changes between the original test images and corrupted versions.
 
-Activate the environment:
+### P3 — Gaussian blur and class-specific behavior
 
-```powershell
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
-```
+Tests **eight Gaussian blur strengths** on the full **12,630-image GTSRB test set**. The analysis focuses on **Class 26 (Traffic Signals)**, which was frequently confused with **Class 18 (General Caution)**.
 
-```bash
-# macOS/Linux
-source .venv/bin/activate
-```
+At blur radius 1, **overall test accuracy decreases from 95.38% to 88.67%**, while **Class 26 accuracy increases from 62.78% to 77.22%**. The notebook also examines changes in individual predictions, image characteristics, and representative examples. This demonstrates that overall accuracy can hide class-specific effects.
 
-Install dependencies and check the shared package:
+### P4 — Interactive model exploration
 
-```text
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-python -m compileall shared
-python -c "from shared import class_mapping, dataset_loader, model_loader; print('shared imports: OK')"
-```
+Provides shared inference outputs and an interactive dashboard to inspect classification performance, errors, and prediction changes across image conditions.
 
-In VS Code, select the interpreter at `.venv\Scripts\python.exe` on Windows or
-`.venv/bin/python` on macOS/Linux using **Python: Select Interpreter**.
+## Project files
 
-PyTorch can use CUDA when a compatible CUDA-enabled PyTorch installation and
-driver are available. This setup deliberately does not install GPU-specific
-packages. The shared model loader selects CUDA only when PyTorch reports it as
-available; otherwise it uses CPU.
+- `ai_aided/P1/` — misclassification notebooks and figures
+- `ai_aided/P2/` — confidence notebook, figures, and cached predictions
+- `ai_aided/figures/p3_confusion/` — additional confusion and paired-prediction figures
+- `human_only/notebooks/P3/` — full-dataset Gaussian blur investigation and results
+- `human_only/notebooks/aaditya_jha/` — inference script, dashboard, and outputs
+- `ai-interactions/` — included AI interaction record
 
-## Moodle templates and submission
-
-The official `team-info.json` and `workload.json` files must be copied into the
-repository root when obtained from Moodle. Their schemas are not recreated
-here. The midpoint checklist is:
-
-- Public GitHub repository URL.
-- Both pairs' Phase I work, `README.md`, and the official JSON templates.
-- AI interaction records and `ai_reflection_midpoint.md`.
-- A video link of no more than five minutes.
-
-The video should introduce the problem, summarize both pairs' work, present
-actual findings and key visualizations, and describe limitations. A suggested
-outline is 0:00-0:45 problem, 0:45-2:00 pair work, 2:00-3:45 findings,
-3:45-4:30 limitations, and 4:30-5:00 next steps. Midpoint deadline:
-11 November 2026 at 23:59.
-
-## Download policy
-
-Setup and default tests do not access the network or download model weights or
-datasets. Downloads occur only when code explicitly calls the model or dataset
-loading helpers. Keep caches and credentials out of Git; `.gitignore` excludes
-common Hugging Face caches, virtual environments, `.env`, and generated outputs.
-
-## Project decisions still required
-
-At the kickoff meeting, agree on the research questions, corruption conditions,
-random seed, sample-matching policy, pair boundaries, and the final official
-Moodle templates. See `docs/evaluation_protocol.md`.
+The folder names reflect the submitted project structure.

@@ -1,0 +1,34 @@
+
+{
+  "team_name": "Everest Intelligence",
+  "students": [
+    {
+      "student_id": "K12542756",
+      "first_name": "Aaditya",
+      "last_name": "Jha",
+      "email": "aadityaza@gmail.com",
+      "github_user": "Aadityaza"
+    },
+    {
+      "student_id": "K12534884",
+      "first_name": "Rudra Prasad",
+      "last_name": "Dhungana",
+      "email": "rudradhungana12@gmail.com",
+      "github_user": "rudradhungana1"
+    },
+    {
+      "student_id": "K12452503",
+      "first_name": "Sandesh",
+      "last_name": "Ghimire",
+      "email": "sandeshghimirecsit@gmail.com",
+      "github_user": "SandeshGhi"
+    },
+    {
+      "student_id": "K12542755",
+      "first_name": "Aditya",
+      "last_name": "Khadka",
+      "email": "khadkaaditya983@gmail.com",
+      "github_user": "7Aditya7"
+    }
+  ]
+}
