@@ -1,0 +1,50 @@
+{
+    "model": "kelvinandreas/vit-traffic-sign-GTSRB",
+    "dataset": "tanganke/gtsrb",
+    "device": "cuda",
+    "date": "2026-11-11T10:31:06.053240",
+    "accuracy": {
+        "contrast": 0.9335,
+        "gaussian_noise": 0.8501,
+        "impulse_noise": 0.8707,
+        "jpeg_compression": 0.9324,
+        "motion_blur": 0.9268,
+        "pixelate": 0.8661,
+        "spatter": 0.8679,
+        "test": 0.9537
+    },
+    "splits": {
+        "test": {
+            "total_samples": 12630,
+            "processed_samples": 12630
+        },
+        "contrast": {
+            "total_samples": 12630,
+            "processed_samples": 12630
+        },
+        "gaussian_noise": {
+            "total_samples": 12630,
+            "processed_samples": 12630
+        },
+        "impulse_noise": {
+            "total_samples": 12630,
+            "processed_samples": 12630
+        },
+        "jpeg_compression": {
+            "total_samples": 12630,
+            "processed_samples": 12630
+        },
+        "motion_blur": {
+            "total_samples": 12630,
+            "processed_samples": 12630
+        },
+        "pixelate": {
+            "total_samples": 12630,
+            "processed_samples": 12630
+        },
+        "spatter": {
+            "total_samples": 12630,
+            "processed_samples": 12630
+        }
+    }
+}
