@@ -9,7 +9,7 @@
 
 Our project is "Beyond Accuracy: Investigating Vision Transformer Behavior in Traffic Sign Recognition". The group has four members in two pairs. Pair A (P1 and P2) works with generative AI (Claude); Pair B works without it. Both pairs investigate the same model and data:
 
-- Model: `kelvinandreas/vit-traffic-sign-GTSRB`, a Vision Transformer fine-tuned from `google/vit-base-patch16-224-in21k`, with 43 traffic sign classes. We did not train or fine-tune anything.
+- Model: `kelvinandreas/vit-traffic-sign-GTSRB`, a Vision Transformer fine-tuned from `google/vit-base-patch16-224-in21k`, with 43 traffic sign classes.
 - Data: `tanganke/gtsrb`, using the `test`, `motion_blur` and `gaussian_noise` splits (12,630 images each, 37,890 predictions in total).
 
 Phase I asks "How does the model behave?", treating the model as a black box. Our objective is to go beyond accuracy and find where the model errs or becomes uncertain, and how image corruptions change this. In Pair A, P1 covers corruption and confusion analysis and P2 covers confidence and the image explorer. This report covers P1's work in detail.
