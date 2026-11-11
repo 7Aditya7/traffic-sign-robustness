@@ -26,13 +26,4 @@ At blur radius 1, **overall test accuracy decreases from 95.38% to 88.67%**, whi
 
 Provides shared inference outputs and an interactive dashboard to inspect classification performance, errors, and prediction changes across image conditions.
 
-## Project files
 
-- `ai_aided/P1/` — misclassification notebooks and figures
-- `ai_aided/P2/` — confidence notebook, figures, and cached predictions
-- `ai_aided/figures/p3_confusion/` — additional confusion and paired-prediction figures
-- `human_only/notebooks/P3/` — full-dataset Gaussian blur investigation and results
-- `human_only/notebooks/aaditya_jha/` — inference script, dashboard, and outputs
-- `ai-interactions/` — included AI interaction record
-
-The folder names reflect the submitted project structure.
