@@ -1,0 +1,19 @@
+{
+  "model": "kelvinandreas/vit-traffic-sign-GTSRB",
+  "model_commit": "70d534a2d0c34ee5e35ef62c3939c5cb6b67f9de",
+  "dataset": "tanganke/gtsrb",
+  "split": "test",
+  "dataset_fingerprint": "ff45d06818947202",
+  "number_of_images": 12630,
+  "blur_levels": [
+    0,
+    0.5,
+    1,
+    1.5,
+    2,
+    2.5,
+    3,
+    5
+  ],
+  "chunk_size": 128
+}
